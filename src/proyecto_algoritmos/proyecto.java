@@ -64,16 +64,18 @@ public class proyecto {
                     double subtotal = 0;
                    
                 int CantidadTotalVendida = 0;
+                //ciclo for para que se argeguen todos los productos
                 for (int i = 1; i <= CantidadProductos; i++) {
                     System.out.println("producto "+ i);
                     System.out.println("codigo: ");
+                    //pide el codigo del producto
                     int codigo;
                     codigo = teclado.nextInt();
+                    //pide el nombre del producto
                     System.out.println("nombre: ");
                     String nombre;
                     nombre = teclado.next();
                 //validar el precio
-                    
                     double precio;
                     do{
                     System.out.println("precio: ");
@@ -84,7 +86,7 @@ public class proyecto {
                         System.out.println("==================ERROR==================");
                     }
                     }while (precio <= 0);
-                    //cantidad
+                    // validar la cantidad
                     int cantidad;
                     do{
                         System.out.println("cantidad: ");
@@ -210,7 +212,7 @@ public class proyecto {
                     else if(formapago==3){
                         System.out.println("forma de pago: transferencia");
                     }
-                    //estadisticas
+                    //estadisticas de venta mayor y menor
                     if(ventasRealizadas == 0){
                     ventaMayor = total;
                     ventaMenor = total;
@@ -219,7 +221,7 @@ public class proyecto {
                     
                     ventaMayor = total;
                     }
-                    else if(total<ventaMenor){
+                     if(total<ventaMenor){
                     ventaMenor = total;
                     }
                     //actualizacion de caja
@@ -272,20 +274,24 @@ public class proyecto {
                     }
                     else{
                         System.out.println("total de ventas: "+ ventasRealizadas);
-                        System.out.println("unidades vendidas: "+productosVendidos);
-                        System.out.println("Dinero vendido"+ totalVendido);
-                        System.out.println("promedio de venta: "+(totalVendido / ventasRealizadas));
-                        
+                        System.out.println("unidades vendidas: "+ productosVendidos);
+                        System.out.println(" total de Dinero recibido: Q"+ totalVendido);
+                        System.out.println("promedio de venta: Q"+(totalVendido / ventasRealizadas));
+                        System.out.println("vetas en efectivo: "+ ventasEfectivo);
+                        System.out.println("vrntas con tarjeta: "+ ventasTarjeta);
+                        System.out.println("ventas con transferencia: "+ ventasTransferencia);
+                        System.out.println("venta mayor: Q"+ ventaMayor);
+                        System.out.println("venta menor: Q"+ ventaMenor);
                     
                     }
                     break;
 
                 case 4:
-                    System.out.println("\nSaliendo del sistema...");
+                    System.out.println("Saliendo del sistema...");
                     break;
 
                 default:
-                    System.out.println("\nOpción inválida. Intente nuevamente.");
+                    System.out.println("Opcion invalida. Intente nuevamente.");
             }
 
         } while (opcion != 4);
